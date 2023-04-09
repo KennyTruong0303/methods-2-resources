@@ -28,9 +28,9 @@ x1=rnorm(1e3,2,2/4) # sampling 1000 datapoint with mu = 2 and sd = 0.5
 #Simulate such data with residual sd = 3.9
 error=rnorm(1e3,0,3.9) # Ensuring that the residuals (i.e. errors have sd = 3.9)
 y1=30+(10*x1)+error 
-df_12 <- data_frame(x1 = x1, y1 = y1)
+df_12 <- data.frame(x1 = x1, y1 = y1)
 model <- stan_glm(y1~x1, data = df_12, refresh = 0)
-#summary(model)
+summary(model)
 ```
 
 ```{r}
@@ -55,7 +55,7 @@ df_12 <- df_12 %>%
   mutate(x2 = x2) %>% 
   mutate(y2 = y2)
 model2 <- stan_glm(y2~x2, data = df_12, refresh = 0)
-#summary(model2)
+summary(model2)
 ```
 
 
